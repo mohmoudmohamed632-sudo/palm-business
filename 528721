@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2e7d32">
+    <title>أولاد الحاج عمر - تجارة النخل</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 50%, #0d3b0d 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('images/palm_3.jpg') center/cover;
+            opacity: 0.15;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 4px solid #ffd700;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #c8e6c9;
+            margin-top: 0.5rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a1a2e;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+        
+        .nav {
+            background: #fff;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            padding: 4rem 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #1b5e20;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .services {
+            padding: 3rem 1rem;
+            background: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #1b5e20;
+            margin-bottom: 2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery {
+            padding: 3rem 1rem;
+            background: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .contact {
+            padding: 3rem 1rem;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: #2e7d32;
+            color: #fff;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background: #1b5e20;
+        }
+        
+        .footer {
+            background: #1b5e20;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 1.6rem; }
+            .subtitle { font-size: 1rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#gallery">معرض الصور</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+    </nav>
+    
+    <header class="header" id="home">
+        <div class="header-content">
+            <div class="logo-container">🌴</div>
+            <h1 class="title">أولاد الحاج عمر</h1>
+            <p class="subtitle">تجارة النخل وخدمات البساتين</p>
+            <span class="badge">خبرة 30 عاماً</span>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h2>نخلنا.. أصل وتاريخ</h2>
+        <p>نقدم أفضل أصناف التمور والنخيل بجودة عالية وخبرة تمتد لأكثر من 30 عاماً في خدمة البساتين والمزارع</p>
+    </section>
+    
+    <section class="services" id="services">
+        <h2 class="section-title">خدماتنا</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌴</div>
+                <h3>بيع النخيل</h3>
+                <p>جميع أصناف النخيل بأعلى جودة</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>تقليم النخيل</h3>
+                <p>خدمات تقليم وتنظيف احترافية</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚚</div>
+                <h3>النقل والتركيب</h3>
+                <p>نقل وتركيب النخيل بأمان</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h3>استشارات زراعية</h3>
+                <p>نصائح وإرشادات للعناية بالنخيل</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">معرض أعمالنا</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1587334207407-52d6694b1f31?w=400" alt="نخيل"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400" alt="تمور"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400" alt="بستان"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=400" alt="نخيل"></div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2 class="section-title">تواصل معنا</h2>
+        <a href="tel:+201000000000" class="contact-btn">📞 اتصل بنا الآن</a>
+    </section>
+    
+    <footer class="footer">
+        <p>أولاد الحاج عمر - تجارة النخل</p>
+        <p>جميع الحقوق محفوظة © 2024</p>
+    </footer>
+</body>
+</html>
